@@ -1,4 +1,4 @@
-service: pre-demo-sls-meetup
+service: openapi-backend-serverless-aws
 
 provider:
   name: aws
@@ -13,15 +13,13 @@ functions:
       - http:
           path: /
           method: ANY
-          cors: true
       - http:
           path: /{path+}
           method: ANY
-          cors: true
 
 plugins:
   - serverless-offline
 
 custom:
   serverless-offline:
-    port: 9001
+    port: 9000

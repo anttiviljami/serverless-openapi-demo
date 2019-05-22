@@ -67,23 +67,14 @@ Mock the API with OpenAPICMD to test
 openapi mock -d openapi.yml
 ```
 
-Modify the serverless `index.ts` to load the openapi.yml as definition.
-
-```typescript
-const api = new OpenAPIBackend({ definition: './openapi.yml' });
-```
-
 Register a handler for an operation:
 ```typescript
-api.register('getMorjesta', (c) => {
-  return {
+api.register({
+  getMorjesta: async (c, event: Lambda.APIGatewayProxyEvent, context: Lambda.Context) => ({
     statusCode: 200,
-    body: JSON.stringify({ message: "No moro" }),
-    headers: {
-      'content-type': 'application/json',
-      'access-control-allow-origin': '*', // cors
-    },
-  };
+    body: JSON.stringify({ message: 'no morjesta' }),
+    headers,
+	}),
 });
 ```
 
@@ -104,3 +95,7 @@ Test the lambda using Swagger UI
 openapi swagger-ui -d openapi.yml --server {api gateway url here}
 ```
 
+## Extra:
+
+- Add new operation with parameters
+- Test request validation

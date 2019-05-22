@@ -1,5 +1,5 @@
 {
-  "name": "pre-demo-sls-meetup",
+  "name": "openapi-backend-serverless-aws",
   "version": "1.0.0",
   "description": "",
   "author": "Viljami Kuosmanen <viljami@avoinsorsa.fi>",
@@ -10,7 +10,9 @@
     "watch-build": "tsc -w",
     "start": "serverless offline start --stage local",
     "watch-start": "nodemon --delay 2 -w serverless.yml -w dist/ -x 'npm run start'",
-    "dev": "concurrently -k -p '[{name}]' -n 'typescript,api' -c 'yellow.bold,cyan.bold' npm:watch-build npm:watch-start"
+    "dev": "concurrently -k -p '[{name}]' -n 'typescript,api' -c 'yellow.bold,cyan.bold' npm:watch-build npm:watch-start",
+    "lint": "tslint --format prose --project .",
+    "test": "jest"
   },
   "dependencies": {
     "openapi-backend": "^2.0.0",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.19",
+    "@types/jest": "^24.0.13",
     "@types/node": "^10.12.26",
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
