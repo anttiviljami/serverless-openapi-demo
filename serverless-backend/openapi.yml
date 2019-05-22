@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Demo API
-  description: Backend K Markkinointi NEXT
+  description: Morjesta vaan
   version: 1.0.0
 paths:
   '/morjesta':

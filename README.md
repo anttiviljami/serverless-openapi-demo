@@ -2,6 +2,8 @@
 
 Live demo for Tampere Serverless Meetup May 22nd 2019
 
+Talk slides: [[Link]](https://docs.google.com/presentation/d/1LaNrwxbI3WPye8EeOXBHlAg8C5GA8MRv8pGd7-x7d_o/edit?usp=sharing)
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org)
