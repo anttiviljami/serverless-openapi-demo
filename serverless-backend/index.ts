@@ -13,6 +13,7 @@ api.register('getMorjesta', (c) => {
     body: JSON.stringify({ message: "No moro" }),
     headers: {
       'content-type': 'application/json',
+      'access-control-allow-origin': '*',
     },
   };
 });

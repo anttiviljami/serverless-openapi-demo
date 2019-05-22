@@ -1,4 +1,4 @@
-service: openapi-backend-serverless-example
+service: pre-demo-sls-meetup
 
 provider:
   name: aws
@@ -13,9 +13,11 @@ functions:
       - http:
           path: /
           method: ANY
+          cors: true
       - http:
           path: /{path+}
           method: ANY
+          cors: true
 
 plugins:
   - serverless-offline

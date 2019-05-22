@@ -11,7 +11,7 @@ Talk slides: [[Link]](https://docs.google.com/presentation/d/1LaNrwxbI3WPye8EeOX
 
 ## Steps
 
-Clone the openapi-backend repository and copy the serverless-aws example
+Clone the openapi-backend repository and copy the [serverless-aws example](https://github.com/anttiviljami/serverless-openapi-demo/tree/master/serverless-backend)
 
 ```sh
 git clone https://github.com/anttiviljami/openapi-backend.git
@@ -81,6 +81,7 @@ api.register('getMorjesta', (c) => {
     body: JSON.stringify({ message: "No moro" }),
     headers: {
       'content-type': 'application/json',
+      'access-control-allow-origin': '*', // cors
     },
   };
 });
@@ -88,7 +89,18 @@ api.register('getMorjesta', (c) => {
 
 Test our API using Swagger UI
 
-```
+```sh
 openapi swagger-ui -d openapi.yml --server http://localhost:9000
+```
+
+Deploy the lambda
+
+```sh
+serverless deploy
+```
+
+Test the lambda using Swagger UI
+```sh
+openapi swagger-ui -d openapi.yml --server {api gateway url here}
 ```
 
