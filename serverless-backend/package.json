@@ -1,0 +1,32 @@
+{
+  "name": "openapi-backend-serverless-aws",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Viljami Kuosmanen <viljami@avoinsorsa.fi>",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "build": "tsc",
+    "watch-build": "tsc -w",
+    "start": "serverless offline start --stage local",
+    "watch-start": "nodemon --delay 2 -w serverless.yml -w dist/ -x 'npm run start'",
+    "dev": "concurrently -k -p '[{name}]' -n 'typescript,api' -c 'yellow.bold,cyan.bold' npm:watch-build npm:watch-start"
+  },
+  "dependencies": {
+    "openapi-backend": "^2.0.0",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.19",
+    "@types/node": "^10.12.26",
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "serverless": "^1.37.1",
+    "serverless-offline": "^3.33.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3",
+    "wait-on": "^3.2.0"
+  }
+}

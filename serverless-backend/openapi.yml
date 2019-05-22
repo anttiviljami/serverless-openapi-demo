@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: Demo API
+  description: Backend K Markkinointi NEXT
+  version: 1.0.0
+paths:
+  '/morjesta':
+    get:
+      operationId: getMorjesta
+      summary: Get a morjesta
+      responses:
+        '200':
+          description: A morjesta response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Morotus'
+components:
+  schemas:
+    Morotus:
+      type: object
+      properties:
+        message:
+          type: string
+          example: 'Morjess!'
+
